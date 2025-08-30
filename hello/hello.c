@@ -1,17 +1,19 @@
-#include <linux/module.h>       // Needed by all modules
-#include <linux/kernel.h>       // Needed for KERN_INFO
+#include <linux/module.h>
+#include <linux/kernel.h>
 
-int init_module(void)
+static int __init hello_init(void)
 {
-    printk(KERN_INFO "Hello world 1.\n");
-    // 0 を返すと、モジュールのロードに成功したことを意味します
+    pr_info("Hello world!!!\n");
     return 0;
 }
 
-void cleanup_module(void)
+static void __exit hello_exit(void)
 {
-    printk(KERN_INFO "Goodbye world 1.\n");
+    pr_info("GoodBye world!!!\n");
 }
+
+module_init(hello_init);
+module_exit(hello_exit);
 
 MODULE_LICENSE("GPL");
 
