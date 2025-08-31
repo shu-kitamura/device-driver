@@ -6,15 +6,6 @@
 - `insmod` 時に `Hello world!!!`
 - `rmmod` 時に `GoodBye world!!!`
 
-## 動作環境
-
-以下の環境で動作を確認できました。  
-
-- カーネル : 5.15.0-1084-raspi
-- OS : Ubuntu 22.04
-- カーネルヘッダがインストール済み
-	- 例: Debian/Ubuntu: `sudo apt-get install build-essential linux-headers-"$(uname -r)"`
-
 ## ファイル
 
 - `hello.c`: 本体
